@@ -1,6 +1,6 @@
 # Electric Heater 
 
-Electric heater with hard real time constraints using 8 bit PIC microcontroller on microgenius development board PICGenios PIC16F.
+Electric heater with hard real-time constraints using 8 bit PIC microcontroller on microgenius development board PICGenios PIC16F.
 
 ## Design specification
 ### Hardware  
@@ -11,7 +11,6 @@ board like:
     - Cooling Element ➔ Fan
     - External E2PROM ➔ I2C E2PROM
 
-Let's first devote the specification required for this project 
 ### Specifications
 
 - Temperature Setting  
@@ -59,7 +58,7 @@ Then I moved to deal with timer and interrupts which will be necessary when I de
 
 
 ### Deciding the design pattern 
-As noticed from the specification, the system contain tasks that happen periodically and another tasks that interact with the user
+As noticed from the specification, the system contains tasks that happen periodically and another tasks that interact with the user
 so I  did some research to find out the best method to build the project with. I came upon different RTOSs but find that it is difficult to port my mcu to work with them due its limited RAM and Flash size, so I tried another route and grabbed the book written by Michael j Pont pattern for time triggered system and looked at the source code of the system he design at the first I thought that his book about designing RTOS but later I found out that his system lack many capabilities that normal RTOS provide like protecting shared data and the communication with system tasks. 
 I discarded these two idea I decided to design the system with crude approach that would later arise many many bugs.
 ### Board specification
