@@ -13,51 +13,49 @@ board like:
 
 Let's first devote the specification required for this project 
 ### Specifications
-– Temperature Setting  
-    - The “Up” or “Down” buttons are used to change the required water 
-    - temperature (set temperature)  
-    - The first “Up” or “Down” button press, enters the temperature setting mode  
-    - After entering temperature setting mode, a single “Up” button press increase the set temperature by 5 degrees  
-    - After entering temperature setting mode, a single “Down” button press decrease the set temperature by 5 degrees  
-    - The minimum possible set temperature is 35 degrees  
-    - The maximum possible set temperature is 75 degrees  
-    - The “External E2PROM” should save the set temperature once set  
-    - If the electric water heater is turned OFF then ON, the stored set temperature should be retrieved from the “External E2PROM”  
-    - The initial set temperature is 60 degrees  
 
-– ON/OFF Behavior 
-    - If power is connected to the heater, the electric water heater is in OFF state  
-    - If the “ON/OFF” button is released and the electric water heater is in OFF state, the electric water heater goes to ON state  
+- Temperature Setting  
+    - The “Up” or “Down” buttons are used to change the required water. 
+    - temperature (set temperature). 
+    - The first “Up” or “Down” button press, enters the temperature setting mode.  
+    - After entering temperature setting mode, a single “Up” button press increase the set temperature by 5 degrees.  
+    - After entering temperature setting mode, a single “Down” button press decrease the set temperature by 5 degree. 
+    - The minimum possible set temperature is 35 degrees.  
+    - The maximum possible set temperature is 75 degrees.  
+    - The “External E2PROM” should save the set temperature once set.  
+    - If the electric water heater is turned OFF then ON, the stored set temperature should be retrieved from the “External.E2PROM”  
+   - The initial set temperature is 60 degrees  -
+- ON/OFF Behavior 
+   - If power is connected to the heater, the electric water heater is in OFF state  
+   - If the “ON/OFF” button is released and the electric water heater is in OFF state, the electric water heater goes to ON state  
     - If the “ON/OFF” button is released and the electric water heater is in ON state, the electric water heater goes to OFF state  
-    - In the OFF state, all display should be turned OFF  
-– Temperature Sensing 
-    - The temperature sensor measures the water temperature  
-    - The water temperature should increase, if the “Heating Element” is ON  
-    - The water temperature should decrease, if the “Cooling Element” is ON  
-    - Temperature should be sensed once every 100 ms  
-    - The decision to turn ON or OFF either the “Heating Element” or the “Cooling Element” based on the average of the last 10 temperature readings
-– Heating/Cooling Elements   
-    - The “Heating Element” should be turned ON, if the current water temperature is less than the set temperature by 5 degrees  
-    - The “Cooling Element” should be turned OFF, if the current water temperature is less than the set temperature by 5 degrees  
-    - The “Heating Element” should be turned OFF, if the current water temperature is greater than the set temperature by 5 degrees  
+   - In the OFF state, all display should be turned OFF  
+- Temperature Sensing 
+   - The temperature sensor measures the water temperature  
+   - The water temperature should increase, if the “Heating Element” is ON  
+   - The water temperature should decrease, if the “Cooling Element” is ON  
+   - Temperature should be sensed once every 100 ms  
+   - The decision to turn ON or OFF either the “Heating Element” or the “Cooling Element” based on the average of the last 10 temperature readings
+- Heating/Cooling Elements   
+   - The “Heating Element” should be turned ON, if the current water temperature is less than the set temperature by 5 degrees  
+   - The “Cooling Element” should be turned OFF, if the current water temperature is less than the set temperature by 5 degrees  
+   - The “Heating Element” should be turned OFF, if the current water temperature is greater than the set temperature by 5 degrees  
     - The “Cooling Element” should be turned ON, if the current water temperature is greater than the set temperature by 5 degrees  
-– Seven Segments  
-    - 2 seven segment by default show the current water temperature or the set temperature  
-    - By default, the 2 seven segment display are show the current water temperature  
-    - If the electric water heater is in the temperature setting mode, the 2 seven segment displays should blink every 1 second and show the set temperature  
-    - In the temperature setting mode, every change in the set temperature should be reflected on the 2 seven segment displays  
-    - The 2 seven segment display should exit the temperature setting mode, if the “UP” and “Down” buttons are not pressed for 5 seconds  
-– Heating Element Led  
-    - If the “Heating Element” is ON, the “Heating Element Led” should blink every 1 second  
-    If the “Cooling Element” is ON, the “Heating Element Led” should be ON  
-    
+- Seven Segments  
+  - 2 seven segment by default show the current water temperature or the set temperature  
+  - By default, the 2 seven segment display are show the current water temperature  
+  - If the electric water heater is in the temperature setting mode, the 2 seven segment displays should blink every 1 second and show the set temperature  
+  - In the temperature setting mode, every change in the set temperature should be reflected on the 2 seven segment displays  
+  - The 2 seven segment display should exit the temperature setting mode, if the “UP” and “Down” buttons are not pressed for 5 seconds  
+- Heating Element Led  
+   - If the “Heating Element” is ON, the “Heating Element Led” should blink every 1 second  
+    - If the “Cooling Element” is ON, the “Heating Element Led” should be ON  
+   
 ## Development Diary
 ### hello PIC  mcu
 
 The first challenge I faced in this project was that I must use the pic pic16f877a with its limited resources and deal with new development environment. So I began searching for the suitable compiler and downloaded the datasheet and started writing some hello world code to get used to this new microcontroller and know the register responsible of handling the ports and other peripheral 
 Then I moved to deal with timer and interrupts which will be necessary when I design the system I discovered that unlike AVR, PIC mcu doesn't have interrupt vector table and you have to check which peripheral caused the interrupt manually.
-
-
 
 
 ### Deciding the design pattern 
