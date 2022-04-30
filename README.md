@@ -1,16 +1,16 @@
-This is my documentation for the assignment I did as a part of acceptance exam to an internship.
+# Electric Heater 
 
-## design specification
+Electric heater with hard real time constraints using 8 bit PIC microcontroller on microgenius development board PICGenios PIC16F.
+
+## Design specification
 ### Hardware
-- Use PICSimLab v0.8
--Board: PIC Genios with  pic16f877a <br/>
--Use peripherals from the
-board
-- Heating Element ➔ Heater
-- Cooling Element ➔ Fan
-- External E2PROM ➔ I2C E2PROM
-- Map other elements as
-you wish
+- PIC Genios with  pic16f877a
+- Peripherals from the
+board like:
+    - Heating Element ➔ Heater
+    - Cooling Element ➔ Fan
+    - External E2PROM ➔ I2C E2PROM
+
 Let's first devote the specification required for this project 
 ### Specifications – Temperature Setting
 - The “Up” or “Down” buttons are used to change the required water
